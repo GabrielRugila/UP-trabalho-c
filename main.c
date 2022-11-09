@@ -27,7 +27,7 @@ int main(){
 
     for(i = 0; i < qtdAlunos; i++){
 
-        printf("\nAluno numero %d", i+1);
+        printf("\n %dº aluno", i+1);
 
         aluno[i] = lerAlunos(i);
 
@@ -41,7 +41,8 @@ int main(){
     for(i=0; i<qtdAlunos; i++){
         mostraAlunos(aluno[i]);
     };
-
+    int parar;
+    scanf("%d",&parar);
     return 0;
 }
 
@@ -55,7 +56,7 @@ int lerQtdAlunos(){
 struct alunos lerAlunos(int numAluno){
     struct alunos aluno;
     printf("\n%d - Insira nome do aluno: ", numAluno+1); //i = n do aluno atual
-    scanf("%s",&aluno.nome);
+    scanf("%s",aluno.nome);
 
     printf("\n%d - Insira a serie do aluno: ", numAluno+1);
     scanf("%d", &aluno.serie);
@@ -71,13 +72,13 @@ struct boletim lerNotas() {
             if (lin == 0) {
                 do {
                     printf("\nNotas de trabalho devem ser de 0 a 2");
-                    printf("\nInsira a nota do trabalho %d do aluno: ", col + 1);
+                    printf("\nInsira a nota do %dº trabalho: ", col + 1);
                         scanf("%f", &aluno.b.notas[0][col]);
                 } while (aluno.b.notas[0][col] > 2 || aluno.b.notas[0][col] < 0);
             } else {
                 do {
                     printf("\nNotas de prova devem ser de 0 a 3");
-                    printf("\nInsira a nota %d de prova: ", col + 1);
+                    printf("\nInsira a nota da %dª prova: ", col + 1);
                     scanf("%f", &aluno.b.notas[1][col]);
                 } while (aluno.b.notas[1][col] > 3 || aluno.b.notas[1][col] < 0);
             }
@@ -105,8 +106,8 @@ int validarPassou(struct boletim b){
 };
 
 void mostraAlunos(struct alunos aluno){
-    printf("\n\t %s", aluno.nome);
-    printf("\n\t %d", aluno.serie);
+    printf("\nNome: %s", aluno.nome);
+    printf("\nSérie: %d", aluno.serie);
     if(aluno.b.passou == 1){
         printf("\nO aluno PASSOU com media %.1f", aluno.b.media);
     } else {
