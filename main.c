@@ -1,3 +1,5 @@
+// Eduardo Henrique Lisboa Alves, Gabriel Fernandes Rugila de Almeida, Gabriel Watanabe e João Vitor Bortoliero Silva
+
 #include <stdio.h>
 
 struct boletim{
